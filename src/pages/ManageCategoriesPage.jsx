@@ -29,7 +29,10 @@ const ManageCategoriesPage = () => {
         {loading ? (
           <p>Loading categories....</p>
         ) : (
-          <ManageCategories categories={categories} />
+          <ManageCategories
+            categories={categories}
+            setCategories={setCategories}
+          />
         )}
       </div>
     </section>

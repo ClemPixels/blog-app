@@ -30,8 +30,8 @@ export const checkAuthState = (dispatch, setUser) => {
           isLogged: true,
         })
       );
-    } else {
-      console.log("No user is logged in");
-    }
+    } //else {
+    //   console.log("No user is logged in");
+    // }
   });
 };

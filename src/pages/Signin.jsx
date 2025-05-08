@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
 import { getUserDetails, login } from "../services/auth";
-import Loader from "../components/Loader";
+import Loading from "../components/Loading";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -51,7 +51,6 @@ const Signin = () => {
   return (
     <section className="form-section">
       <div className="container form-section-container">
-        {loading && <Loader />}
         <h2>Sign In</h2>
         {error && (
           <div className="alert-message error">
@@ -78,7 +77,13 @@ const Signin = () => {
             required
           />
           <button type="submit" className="btn">
-            Sign In
+            {loading ? (
+              <p style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <Loading size="25px" /> Loading...
+              </p>
+            ) : (
+              "Sign In"
+            )}
           </button>
           <small>
             Don't have an account? <Link to="/signup">Sign Up</Link>

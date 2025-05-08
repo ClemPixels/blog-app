@@ -72,7 +72,7 @@ const router = createBrowserRouter([
         element: <AddPost />,
       },
       {
-        path: "/edit-category",
+        path: "/edit-category/:id",
         element: <EditCategory />,
       },
       {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         element: <EditPost />,
       },
       {
-        path: "/edit-users",
+        path: "/edit-users/:id",
         element: <EditUser />,
       },
       {

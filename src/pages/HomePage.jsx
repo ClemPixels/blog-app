@@ -14,14 +14,14 @@ const HomePage = () => {
       const fetchedPosts = await getAllPosts();
 
       // Log the fetchedPosts data
-      console.log("Fetched Posts:", fetchedPosts);
+      // console.log("Fetched Posts:", fetchedPosts);
 
       const featured = fetchedPosts.filter((post) => post.featured === true);
       featured.sort((a, b) => b.createdAt.toMillis() - a.createdAt.toMillis());
       const regularPosts = fetchedPosts.filter(
         (post) => post.featured !== true
       );
-      console.log("regularPosts:", regularPosts);
+      // console.log("regularPosts:", regularPosts);
       setFeaturedPost(featured[0] || null);
       setPosts(fetchedPosts);
       setLoading(false);
@@ -35,7 +35,7 @@ const HomePage = () => {
       <section className="featured">
         <div className="container featured-container">
           {loading ? (
-            <Loader /> // <p>Loading...</p>
+            <Loader />
           ) : featuredPost ? (
             <>
               <div className="post-thumbnail">
