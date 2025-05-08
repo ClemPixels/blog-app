@@ -21,6 +21,26 @@ const Nav = () => {
       console.error("Error logging out: ", error.message);
     }
   };
+
+  const handleOpenNav = () => {
+    const nav = document.querySelector(".nav-items");
+    const openBtn = document.getElementById("open-nav-btn");
+    const closeBtn = document.getElementById("close-nav-btn");
+
+    nav.style.display = "flex";
+    openBtn.style.display = "none";
+    closeBtn.style.display = "block";
+  };
+
+  const handleCloseNav = () => {
+    const nav = document.querySelector(".nav-items");
+    const openBtn = document.getElementById("open-nav-btn");
+    const closeBtn = document.getElementById("close-nav-btn");
+
+    nav.style.display = "none";
+    openBtn.style.display = "block";
+    closeBtn.style.display = "none";
+  };
   return (
     <nav>
       <div className="container nav-container">
@@ -56,10 +76,10 @@ const Nav = () => {
             </Link>
           )}
         </ul>
-        <button id="open-nav-btn">
+        <button id="open-nav-btn" onClick={handleOpenNav}>
           <FaBars />
         </button>
-        <button id="close-nav-btn">
+        <button id="close-nav-btn" onClick={handleCloseNav}>
           <FaXmark />
         </button>
       </div>
