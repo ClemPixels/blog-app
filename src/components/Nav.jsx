@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../services/auth";
 import { clearUser } from "../redux/userSlice";
+import { FaBars } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
 const Nav = () => {
   const { isLogged, avatar, username } = useSelector((state) => state.user);
 
@@ -55,10 +57,10 @@ const Nav = () => {
           )}
         </ul>
         <button id="open-nav-btn">
-          <i className="uil uil-bars"></i>
+          <FaBars />
         </button>
         <button id="close-nav-btn">
-          <i className="uil uil-multiply"></i>
+          <FaXmark />
         </button>
       </div>
     </nav>
